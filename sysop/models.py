@@ -27,7 +27,7 @@ class Domain(models.Model):
 
 
 class Server(models.Model):
-    """Tier 2 servers and hubs"""
+    """Tier2 servers and hubs"""
     #FIXME: Should hubs be differentiated from servers?
 
     # Admin fields:
@@ -115,7 +115,7 @@ class Rotate(models.Model):
     hostname = models.CharField(max_length=63, validators=[hostname_validator])
     domain = models.ForeignKey(Domain)
     regional = models.BooleanField(blank=True,
-        help_text="This rotate is an APRS-IS Tier 2 primary regional rotate.")
+        help_text="This rotate is an APRS-IS Tier2 primary regional rotate.")
     eligible = models.ManyToManyField(Server, blank=True)
 
     def __unicode__(self):
